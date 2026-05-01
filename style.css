@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+}
+
+#game-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 0.5rem;
+}
+
+input, select, button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-msg {
+    color: #dc3545;
+    font-size: 0.9rem;
+    min-height: 1.2rem;
+}
+
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.option-btn {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #e2e6ea;
+}
+
+.option-btn:disabled {
+    cursor: default;
+}
+
+.option-btn.correct {
+    background-color: #28a745 !important;
+    color: white;
+}
+
+.option-btn.wrong {
+    background-color: #dc3545 !important;
+    color: white;
+}
+
+.game-header {
+    font-size: 0.9rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+#feedback-msg {
+    font-weight: bold;
+    min-height: 1.5rem;
+    margin: 1rem 0;
+}
+
+.turn-indicator h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+#final-scores p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+#winner-declaration {
+    margin: 2rem 0;
+    color: #28a745;
+}
