@@ -1,13 +1,12 @@
-// Game State
 let player1 = { name: '', score: 0 };
 let player2 = { name: '', score: 0 };
 let currentRound = 1;
-let categories = {}; // { displayName: apiValue }
+let categories = {}; 
 let availableCategories = []; // array of display names
 let currentQuestions = [];
 let currentQuestionIndex = 0;
 
-// DOM Elements
+
 const screens = document.querySelectorAll('.screen');
 const setupScreen = document.getElementById('setup-screen');
 const categoryScreen = document.getElementById('category-screen');
@@ -21,7 +20,9 @@ const setupError = document.getElementById('setup-error');
 const categorySelect = document.getElementById('category-select');
 const nextRoundBtn = document.getElementById('next-round-btn');
 
-// --- Helper Functions ---
+
+
+
 
 function showScreen(screenId) {
     screens.forEach(s => s.style.display = 'none');
@@ -36,18 +37,13 @@ function shuffleArray(array) {
     return array;
 }
 
-// --- Initialization ---
+
 
 async function init() {
     try {
         const response = await fetch('https://the-trivia-api.com/v2/categories');
         const data = await response.json();
         
-        // Data is { "Category Name": ["tag1", "tag2"], ... }
-        // We use the first tag as the query value or the snake_case version of the key
-        // Based on API behavior, the key itself often works as a category filter if properly formatted
-        // However, the v2 API usually prefers the slugified version.
-        // Let's store the display name and its likely slug.
         
         categories = data;
         availableCategories = Object.keys(data);
@@ -67,7 +63,7 @@ function populateCategoryDropdown() {
     });
 }
 
-// --- Event Listeners ---
+
 
 document.getElementById('start-game-btn').addEventListener('click', () => {
     const name1 = p1NameInput.value.trim();
@@ -113,7 +109,7 @@ document.getElementById('start-round-btn').addEventListener('click', async () =>
             fetchQuestions(categorySlug, 'hard', 2)
         ]);
 
-        // Specific Order: Easy P1, Easy P2, Medium P1, Medium P2, Hard P1, Hard P2
+        
         currentQuestions = [
             easy[0], easy[1],
             medium[0], medium[1],
@@ -193,7 +189,7 @@ function handleAnswer(selected, correct, clickedBtn) {
         document.getElementById('feedback-msg').textContent = 'Correct!';
         document.getElementById('feedback-msg').style.color = '#28a745';
         
-        // Scoring: Easy (0,1) -> 10, Medium (2,3) -> 15, Hard (4,5) -> 20
+        // Scoring
         let points = 0;
         if (currentQuestionIndex < 2) points = 10;
         else if (currentQuestionIndex < 4) points = 15;
@@ -264,5 +260,5 @@ document.getElementById('restart-btn').addEventListener('click', () => {
     location.reload();
 });
 
-// Start the app
+
 init();
