@@ -2,7 +2,7 @@ let player1 = { name: '', score: 0 };
 let player2 = { name: '', score: 0 };
 let currentRound = 1;
 let categories = {}; 
-let availableCategories = []; // array of display names
+let availableCategories = []; 
 let currentQuestions = [];
 let currentQuestionIndex = 0;
 
@@ -94,7 +94,10 @@ document.getElementById('start-game-btn').addEventListener('click', () => {
 
 document.getElementById('start-round-btn').addEventListener('click', async () => {
     const selectedCategory = categorySelect.value;
-    if (!selectedCategory) return;
+    if (!selectedCategory){
+        return;
+    }
+        
 
     const categorySlug = categories[selectedCategory][0]; // Using the first tag as the category slug
     
@@ -127,6 +130,7 @@ document.getElementById('start-round-btn').addEventListener('click', async () =>
         // Remove category from available
         availableCategories = availableCategories.filter(c => c !== selectedCategory);
         populateCategoryDropdown();
+ 
 
         currentQuestionIndex = 0;
         setupQuestion();

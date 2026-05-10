@@ -1,48 +1,82 @@
-# Two-Player Trivia Battle Game
+# 🎮 Two-Player Trivia Battle
 
-A fun and interactive two-player trivia game built with HTML, CSS, and JavaScript. Players compete across multiple rounds, answering questions from various categories with increasing difficulty levels.
+A simple and fun browser-based trivia game where two players compete against each other by answering quiz questions from different categories and difficulty levels.
 
-## Features
+The game is built using **HTML, CSS, and Vanilla JavaScript** and uses **The Trivia API** to fetch real-time quiz questions.
 
-- **Two-Player Mode**: Enter names for both players and compete head-to-head
-- **Multiple Rounds**: Play up to multiple rounds with different categories
-- **Category Selection**: Choose from various trivia categories fetched from The Trivia API
-- **Difficulty Levels**: Questions range from Easy (10 points), Medium (15 points), to Hard (20 points)
-- **Real-Time Scoring**: Track scores throughout the game with instant feedback
-- **Responsive Design**: Clean, modern UI that works on different screen sizes
-- **Turn-Based Gameplay**: Alternating turns between players for fair competition
+---
 
-## How to Play
+# 📌 Features
 
-1. **Setup**: Enter unique names for both players
-2. **Category Selection**: Choose a trivia category for the round
-3. **Gameplay**: Answer questions alternately - 2 easy, 2 medium, and 2 hard per round
-4. **Scoring**: Earn points based on difficulty (Easy: 10pts, Medium: 15pts, Hard: 20pts)
-5. **Rounds**: Continue to next round or end game after each round
-6. **Winner**: Player with the highest score wins!
+- 👥 Two-player competitive gameplay
+- 🧠 Multiple trivia categories
+- 📈 Difficulty-based scoring system
+- 🔄 Multiple game rounds
+- ⚡ Real-time score updates
+- 🎯 Turn-based question system
+- 🎨 Clean and responsive UI
+- 🌐 Live questions fetched from API
 
-## Installation & Running
+---
 
-1. Clone or download the project files
-2. Open `index.html` in any modern web browser
-3. No additional setup required - the game runs entirely in the browser
+# 🕹️ How the Game Works
 
-## Technologies Used
+## 1. Enter Player Names
+Both players enter their names before starting the game.
 
-- **HTML5**: Structure and layout
-- **CSS3**: Styling and responsive design
-- **JavaScript (ES6+)**: Game logic and API integration
-- **The Trivia API**: Source of trivia questions and categories
+- Names cannot be empty
+- Both names must be different
 
-## API Reference
+---
 
-This game uses [The Trivia API](https://the-trivia-api.com/) for fetching questions and categories.
+## 2. Choose a Category
+Players select a trivia category for the current round.
 
-- Categories endpoint: `https://the-trivia-api.com/v2/categories`
-- Questions endpoint: `https://the-trivia-api.com/v2/questions?categories={category}&difficulties={difficulty}&limit={limit}`
+Examples:
+- Science
+- History
+- Sports
+- Music
+- Movies
 
+---
 
+## 3. Answer Questions
+Each round contains:
 
+- 2 Easy Questions
+- 2 Medium Questions
+- 2 Hard Questions
 
+Players answer questions one by one in alternating turns.
 
+---
 
+# 🏆 Scoring System
+
+| Difficulty | Points |
+|---|---|
+| Easy | 10 Points |
+| Medium | 15 Points |
+| Hard | 20 Points |
+
+Correct answers add points to the player's score.
+
+---
+
+# 🔁 Game Flow
+
+```text
+Start Game
+   ↓
+Enter Player Names
+   ↓
+Choose Category
+   ↓
+Answer Questions
+   ↓
+Update Scores
+   ↓
+Next Round or End Game
+   ↓
+Show Final Winner
